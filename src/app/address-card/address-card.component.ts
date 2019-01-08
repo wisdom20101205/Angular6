@@ -15,6 +15,7 @@ export class AddressCardComponent implements OnInit {
   @Input('user') userObj: User;
   // tslint:disable-next-line:no-inferrable-types
   isCollapsed: boolean = true;
+  textInput: String = 'aaaabbbb';
 
   constructor() {
     console.log('constructor');
