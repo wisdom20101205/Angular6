@@ -15,9 +15,6 @@ export class AddressCardComponent implements OnInit {
       title: 'Software Developer',
       address: '1234 Main St, City, State, 10010',
       phone: [
-        '123-123-1234',
-        '456-456-4567',
-        '789-789-7890'
       ]
     };
   }
