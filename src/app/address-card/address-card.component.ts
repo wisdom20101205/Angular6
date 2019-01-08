@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { User } from './user.model';
 
 @Component({
   selector: 'app-address-card',
@@ -9,7 +10,9 @@ export class AddressCardComponent implements OnInit {
 
   user: any;
   // tslint:disable-next-line:no-input-rename
-  @Input('name') userName: string;
+  // @Input('name') userName: string;
+  // tslint:disable-next-line:no-input-rename
+  @Input('user') userObj: User;
 
   constructor() {
     console.log('constructor');
@@ -17,16 +20,23 @@ export class AddressCardComponent implements OnInit {
 
   ngOnInit() {
     console.log('ngOnInit');
+    // this.user = {
+    //   name: this.userName,
+    //   title: 'Software Developer',
+    //   address: '1234 Main St, City, State, 10010',
+    //   phone: [
+    //     '1111',
+    //     '22222',
+    //     '33333'
+    //   ]
+    // };
     this.user = {
-      name: this.userName,
-      title: 'Software Developer',
-      address: '1234 Main St, City, State, 10010',
-      phone: [
-        '1111',
-        '22222',
-        '33333'
-      ]
+      name: this.userObj.name,
+      title: this.userObj.designation,
+      address: this.userObj.address,
+      phone: this.userObj.phone
     };
+
   }
 
 }
