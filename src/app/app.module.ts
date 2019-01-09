@@ -10,13 +10,15 @@ import { DateComponent } from './date/date.component';
 import { AddressCardComponent } from './address-card/address-card.component';
 import { ViewModule } from './view/view.module';
 import { TestService } from './test.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
     DateComponent,
-    AddressCardComponent
+    AddressCardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

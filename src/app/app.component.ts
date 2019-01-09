@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   user: User;
   textInput: String = 'initial value';
   // private svc1: TestService;
+  response: any = {};
 
   constructor(private svc: TestService, private http: HttpClient) {
     this.svc.printToConsole('Got the Service');
@@ -29,8 +30,10 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
-    const resp = this.http.get('https://api.github.com/users/koushikkothagal');
-    resp.subscribe((data) => console.log(data));
-    // console.log(resp);
+    this.http.get('https://api.github.com/users/koushikkothagal')
+    .subscribe((response) => {
+      this.response = response;
+      console.log(this.response);
+    });
   }
 }
